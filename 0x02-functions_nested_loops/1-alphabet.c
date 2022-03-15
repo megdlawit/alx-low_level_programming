@@ -1,13 +1,15 @@
 #include "main.h"
+
 /**
- * print_alphabet - prints alphabet in lowercase
- *
- **/
+ * print_alphabet - prints the alphabet in lowercase with nexw line at the end
+ */
 void print_alphabet(void)
 {
-	char c;
+	char alpha;
 
-	for (c = 'a'; c <= 'z'; c++)
-		_putchar(c);
+	for (alpha = 'a'; alpha <= 'z'; alpha++)
+	{
+		_putchar(alpha);
+	}
 	_putchar('\n');
 }
