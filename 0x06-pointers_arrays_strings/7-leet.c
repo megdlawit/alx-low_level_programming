@@ -1,37 +1,29 @@
 #include "main.h"
-
 /**
- * *leet - check the code for Holberton School students.
- *
- * @str: string.
- * Return: string.
+ * leet - encodes a string into 1337
+ * @s: input string.
+ * Return: the pointer to dest.
  */
-char *leet(char *str)
-{
-	int i;
 
-	for (i = 0; str[i] != '\0'; i++)
+char *leet(char *s)
+{
+	int count = 0, i;
+	int low_letters[] = {97, 101, 111, 116, 108};
+	int upp_letters[] = {65, 69, 79, 84, 76};
+	int numbers[] = {52, 51, 48, 55, 49};
+
+	while (*(s + count) != '\0')
 	{
-		if (str[i] == 'a' || str[i] == 'A')
+		for (i = 0; i < 5; i++)
 		{
-			str[i] = '4';
+			if (*(s + count) == low_letters[i] || *(s + count) == upp_letters[i])
+			{
+				*(s + count) = numbers[i];
+				break;
+			}
 		}
-		else if (str[i] == 'e' || str[i] == 'E')
-		{
-			str[i] = '3';
-		}
-		else if (str[i] == 'o' || str[i] == 'O')
-		{
-			str[i] = '0';
-		}
-		else if (str[i] == 't' || str[i] == 'T')
-		{
-			str[i] = '7';
-		}
-		else if (str[i] == 'l' || str[i] == 'L')
-		{
-			str[i] = '1';
-		}
+		count++;
 	}
-	return (str);
+
+	return (s);
 }
